@@ -1,0 +1,133 @@
+@font-face {
+    font-family: 'Stint Ultra Condensed';
+    src: url(../Font/StintUltraCondensed-Regular.ttf);
+}
+@font-face {
+    font-family: 'NotoSerif-Regular';
+    src: url(../Font/NotoSerif-Regular.ttf);
+}
+html{
+    background-color: black;
+}
+.bookDimensions{
+    height: 600px;
+    width: 394px;
+    background-color: rgb(117, 143, 39);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -20;
+    overflow: hidden;
+}
+
+.blackCircle{
+    position: absolute;
+    top: 5%;
+    left: 13%;
+    height: 110px;
+    width: 110px;
+    border-radius: 100%;
+    background-color: black;
+    z-index: +3;
+}
+
+@keyframes faceFix {
+    0%,100%{opacity: 99;}
+    
+}
+@keyframes airShip {
+    0% { left: 0px; top: 0px;}
+    10%{left:2px; top: -1px}
+    
+    50%{left:-2px; top:2} 
+    75%{left:2px; top:-3px}
+    100%{left:-3px; top:3px}
+}
+
+
+.bookDimensions:hover .blackCircle{
+    opacity: 0;
+    transition: 1s;
+}
+.bookDimensions:hover .blackDesign{
+    opacity: 0;
+    transition: 1s;
+}
+.bookDimensions:hover .author{
+    opacity: 0;
+    transition: 1s;
+}
+.bookDimensions:hover .title{
+    opacity: 0;
+    transition: 1s;
+}
+.bookDimensions:hover .eye{
+    animation: airShip 15s;
+    animation-delay: 100;
+    animation-iteration-count: infinite;
+
+}
+.bookDimensions:hover .face{
+    animation: faceFix 3s;
+    opacity: 95;
+}
+.blackDesign{
+    position: absolute;
+    left: -10px;
+}
+.author{
+    text-align: center;
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    width: 75px;
+    font-family: NotoSerif-Regular;
+    font-size: 25px;
+    color: white;
+    z-index: +12;
+}
+.title{
+    font-family: Stint Ultra Condensed;
+    font-size: 100px;
+    color: white;
+    text-shadow: -1px 1px 0 #000,1px 1px 0 #000,1px -1px 0 #000,-1px -1px 0 #000;
+    transform: rotate(-7deg);
+    position: absolute;
+    top: 16%;
+    left: 3%;
+    z-index: 5;
+}
+
+.eye{
+
+    position: absolute;
+    z-index: -5;
+    animation: faceMove 4s;
+
+}
+.face{
+    position: absolute;
+    z-index:-4;
+    animation: faceMove 4s;
+    
+}
+
+.sky{
+    position: absolute;
+    z-index: -6;
+    animation: skyMove 4s;
+
+}
+
+@keyframes skyMove {
+    0%    { top: -500px; opacity: 100;}
+    75%   { top: 5px;}
+    100%  {top:0px}	
+}  
+
+@keyframes faceMove {
+    0%    { top: 500px; opacity: 100;}
+    75%   { top: -5px;}
+    100%  {top:0px}	
+}
